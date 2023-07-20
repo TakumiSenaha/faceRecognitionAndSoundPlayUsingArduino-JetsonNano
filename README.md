@@ -5,10 +5,10 @@ When Jetson nano performs facial recognition and finds a learner, it signals Ard
 <img src="/images/setting.png" width=120> <img src="/images/faceRecognition.png" width=120>
 
 
-Using Jetson nono and Arduino, we made a simple face recognition type sound reproduction machine.
+Using Jetson Nono and Arduino, we made a simple face recognition type sound reproduction machine.
 It can be used for something interesting by playing music associated with a person's face.
 Currently, the machine learns one person's face and plays music accordingly.
-(The code is designed to be able to learn multiple people.)
+([The code](/Python/faceTrainFaceNet.py) is designed to be able to learn multiple people.)
 * Demonstration Video
   * https://youtu.be/NSpYV-hk05w
 
