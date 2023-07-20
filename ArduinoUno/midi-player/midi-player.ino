@@ -16,6 +16,8 @@ uint8_t led = 0;
 /*
 1. create a midi file of your favorite music
 2. convert it with the following command
+$ xxd -i music.mid
+(music.mid is your path of mid file)
 3. copy the results to test.txt (only the numbers in the array)
 The following is an example of test.txt
 const unsigned char buf[] PROGMEM = {
