@@ -42,41 +42,44 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  uint8_t data[10];
-  while (available_size < 4)write_into_buf(buf, sizeof(buf), &available_size, &wp);
-  set_array_from_buf(data, 4, buf, sizeof(buf), &available_size, &rp);
+  if (Serial.available() > 0) {
+    String incomingMessage = Serial.readString();
+    //if (incomingMessage == "TRUE") {
+      uint8_t data[10];
+      while (available_size < 4)write_into_buf(buf, sizeof(buf), &available_size, &wp);
+      set_array_from_buf(data, 4, buf, sizeof(buf), &available_size, &rp);
 
-  if (!check_smf_signature(data)) {
-    Serial.write(data, 4);
-    return;
-  }
-  while (available_size < 10)write_into_buf(buf, sizeof(buf), &available_size, &wp);
-  set_array_from_buf(data, 10, buf, sizeof(buf), &available_size, &rp);
+      if (!check_smf_signature(data)) {
+        Serial.write(data, 4);
+        return;
+      }
+      while (available_size < 10)write_into_buf(buf, sizeof(buf), &available_size, &wp);
+      set_array_from_buf(data, 10, buf, sizeof(buf), &available_size, &rp);
 
-  if (!check_size(data)) {
-    tone(SPEAKER_PIN, 200);
-    Serial.write("Invalid Header Size!\n");
-    return;
-  }
-  else if (!check_format(data + 4)) {
-    tone(SPEAKER_PIN, 300);
-    Serial.write("Invalid Format Version!\n");
-    return;
-  } else if (!check_is_single_track(data + 6)) {
-    Serial.write("Multi track is not supported...\n");
-    tone(SPEAKER_PIN, 400);
-    return;
-  }
-  uint16_t resolution = get_resolution(data + 8);
-  if (resolution == 0) {
-    tone(SPEAKER_PIN, 500);
-    Serial.write("Not supported resolution...\n");
-  }
-  if (!play_loop(resolution)) {
-    tone(SPEAKER_PIN, 600);
-    Serial.write("Failed to play...\n");
-  }
+      if (!check_size(data)) {
+        tone(SPEAKER_PIN, 200);
+        Serial.write("Invalid Header Size!\n");
+        return;
+      }
+      else if (!check_format(data + 4)) {
+        tone(SPEAKER_PIN, 300);
+        Serial.write("Invalid Format Version!\n");
+        return;
+      } else if (!check_is_single_track(data + 6)) {
+        Serial.write("Multi track is not supported...\n");
+        tone(SPEAKER_PIN, 400);
+        return;
+      }
+      uint16_t resolution = get_resolution(data + 8);
+      if (resolution == 0) {
+        tone(SPEAKER_PIN, 500);
+        Serial.write("Not supported resolution...\n");
+      }
+      if (!play_loop(resolution)) {
+        tone(SPEAKER_PIN, 600);
+        Serial.write("Failed to play...\n");
+      }
+    }
 }
 
 
