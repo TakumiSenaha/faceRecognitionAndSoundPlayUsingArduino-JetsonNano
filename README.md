@@ -79,11 +79,9 @@ python3.11 -m pip install numpy
    >>ls -l /dev/ttyUSB0
    >>```
    >>Output result
-
-
+   >>
    >>`crw-rw---- 1 root uucp 188, 0 Aug 11 13:33 /dev/ttyUSB0`
-
-
+   >>
    >>If the Arduino IDE says you don't have permissions to write to the device, you can use the following command
    >>```
    >>chmod 666 /dev/ttyUSB0
