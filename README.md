@@ -41,7 +41,9 @@ python3.11 -m pip install numpy
 
 
 # Implementation Procedure
-1. Stores face images for training
+1. Stores face images for training.
+
+
    The [train_dir](/Python/train_dir/) directory structure is shown below, where several face images are stored. (It is possible to store as few as 10 images.)
    ```
    <train_dir>/
