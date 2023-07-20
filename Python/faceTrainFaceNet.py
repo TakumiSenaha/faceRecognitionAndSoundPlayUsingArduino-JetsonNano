@@ -6,6 +6,33 @@ from sklearn.svm import SVC
 from facenet_pytorch import MTCNN, InceptionResnetV1
 import pickle
 
+'''
+directory structure
+
+<train_dir>/
+            <person_1>/
+                <person_1_face-1>.jpg
+                <person_1_face-2>.jpg
+                .
+                .
+                <person_1_face-n>.jpg
+           <person_2>/
+                <person_2_face-1>.jpg
+                <person_2_face-2>.jpg
+                .
+                .
+                <person_2_face-n>.jpg
+            .
+            .
+            <person_n>/
+                <person_n_face-1>.jpg
+                <person_n_face-2>.jpg
+                .
+                .
+                <person_n_face-n>.jpg
+                
+'''
+
 # Define the directory containing the images
 train_dir = 'train_dir/' # put yor train_dir path like 'C:/Users/username/train_dir/'
 miss_count = 0
