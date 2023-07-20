@@ -73,22 +73,22 @@ python3.11 -m pip install numpy
    ```
    python3.11 faceTrainFaceNet.py
    ```
-3. Write midi-player.ino to Arduino Uno (MAKER-UNO). (Select your serial port appropriately. In some cases, you may get an error saying you do not have permission.)
-4. Show the connection where serial communication is possible ("/dev/ttyUSB0" in my case)
-   ```
-   ls -l /dev/ttyUSB0
-   ```
-   Output result
+3. Write [midi-player.ino](/ArduinoUno/midi-player/midi-player.ino) to Arduino Uno (MAKER-UNO). (Select your serial port appropriately. In some cases, you may get an error saying you do not have permission.)
+   >>Show the connection where serial communication is possible ("/dev/ttyUSB0" in my case)
+   >>```
+   >>ls -l /dev/ttyUSB0
+   >>```
+   >>Output result
 
 
-   `crw-rw---- 1 root uucp 188, 0 Aug 11 13:33 /dev/ttyUSB0`
+   >>`crw-rw---- 1 root uucp 188, 0 Aug 11 13:33 /dev/ttyUSB0`
 
 
-   If the Arduino IDE says you don't have permissions to write to the device, you can use the following command
-   ```
-   chmod 666 /dev/ttyUSB0
-   ```
-5. Connect a USB webcam to the Jetson Nano and run [faceRecognition.py](/Python/faceRecgnition.py).
+   >>If the Arduino IDE says you don't have permissions to write to the device, you can use the following command
+   >>```
+   >>chmod 666 /dev/ttyUSB0
+   >>```
+4. Connect a USB webcam to the Jetson Nano and run [faceRecognition.py](/Python/faceRecgnition.py).
    ```
    sudo python3.11 Python/faceRecognition.py
    ```
@@ -99,7 +99,7 @@ python3.11 -m pip install numpy
                 ser.write(b'detected\n')
                 sent_serial = True
    ```
-6. When a face is detected, the Arduino makes a sound.
+5. When a face is detected, the Arduino makes a sound.
 <p align="center">
     <img src="/images/recognitionAndSound.png" width=480>
 </p>
