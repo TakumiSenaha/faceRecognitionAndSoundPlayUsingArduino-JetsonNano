@@ -12,7 +12,7 @@ const uint8_t SPEAKER_PIN = 8;
 uint8_t led = 0;
 
 // include the path to the text file describing the converted mid file like "C:/User/username/Arduino/test.txt"
-#include "test.txt"
+#include "/Arduino/test.txt"
 /*
 1. create a midi file of your favorite music
 2. convert it with the following command
