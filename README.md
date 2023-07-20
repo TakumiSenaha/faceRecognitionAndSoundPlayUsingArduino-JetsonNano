@@ -15,13 +15,16 @@ Currently, the machine learns one person's face and plays music accordingly.
 * [MAKER-UNO](https://futuranet.it/futurashop/image/catalog/data/Download/Maker%20Uno%20User's%20Manual.pdf)
 * web camera
 * Python3.11.4
-  * pip install opencv-python
-  * pip install insightface
-  * pip install numpy
-  * pip install facenet-pytorch
-  * pip install pickle-mixin
-  * pip install scikit-learn
-  * pip install facenet-pytorch
+  ```
+    pip install opencv-python
+    pip install insightface
+    pip install numpy
+    pip install facenet-pytorch
+    pip install pickle-mixin
+    pip install scikit-learn
+    pip install facenet-pytorch
+    ```
+    
 
 ※ recommend that you define a command to invoke 'Python 3.11' and use python3.11 -m pip install ~
 ```
@@ -33,3 +36,5 @@ python3.11 -m pip install numpy
 [If you get an error in imshow...](https://qiita.com/tik26/items/a75e03e523926cd2f059)
 
 
+# Implementation Procedure
+- 
