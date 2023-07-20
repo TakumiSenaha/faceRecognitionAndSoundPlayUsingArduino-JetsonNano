@@ -10,7 +10,20 @@ struct midi_note {
 const uint8_t LED = 13;
 const uint8_t SPEAKER_PIN = 8;
 uint8_t led = 0;
-#include "/home/pg_mana/Develop/build/Arduino/midi-player/test.txt"
+
+// include the path to the text file describing the converted mid file like "C:/User/username/Arduino/test.txt"
+#include "test.txt"
+/*
+1. create a midi file of your favorite music
+2. convert it with the following command
+3. copy the results to test.txt (only the numbers in the array)
+The following is an example of test.txt
+const unsigned char buf[] PROGMEM = {
+  0x4d, 0x54, 0x68, 0x64, 0x00, 0x00, 0x00, 0x06, 0x00, 0x01, 0x00, 0x02,
+  0x01, 0xe0, 0x4d, 0x54, 0x72, 0x6b, 0x00, 0x00, 0x00, 0xc6, 0x00, 0xff,
+  ...
+  };
+*/
 
 //uint8_t buf[2048];
 uint32_t rp = 0, wp = sizeof(buf), available_size = sizeof(buf);
