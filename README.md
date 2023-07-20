@@ -98,7 +98,9 @@ python3.11 -m pip install numpy
                 sent_serial = True
    ```
 6. When a face is detected, the Arduino makes a sound.
+<p align="center">
+    <img src="/images/recognitionAndSound.png" width=480>
+</p>
 
-<img src="/images/recognitionAndSound.png" width=480>
 
 
