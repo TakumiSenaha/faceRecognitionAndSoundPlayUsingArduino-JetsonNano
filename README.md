@@ -2,7 +2,7 @@
 When Jetson nano performs facial recognition and finds a learner, it signals Arduino Uno via serial communication and Arduino Uno receives it to generate the music that was originally written.
 
 # Abstract
-<img src="/images/setting.png" width=120> <img src="/images/faceRecognition.png" width=120>
+<img src="/images/setting.png" width=240> <img src="/images/faceRecognition.png" width=240>
 
 
 Using Jetson Nono and Arduino, we made a simple face recognition type sound reproduction machine.
@@ -99,6 +99,6 @@ python3.11 -m pip install numpy
    ```
 6. When a face is detected, the Arduino makes a sound.
 
-<img src="/images/recognitionAndSound.png" width=200>
+<img src="/images/recognitionAndSound.png" width=480>
 
 
